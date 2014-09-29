@@ -67,8 +67,8 @@ function style(feature) {
 
 function onEachFeature(feature, layer) {
 	layer.on({
-		touchstart: highlightFeatures,
-		touchend: resetHighlight
+		mouseover: highlightFeatures,
+		mouseout: resetHighlight
 	});
 }
 
