@@ -127,9 +127,8 @@ Promise.all([world, dataset]).then(function(results) {
 });
 
 var map = leaflet.map('map', {
-	attributionControl: false,
 	minZoom: 2,
-	maxZoom: 6,
+	maxZoom: 16,
 	maxBounds: [
 		[-90, -180],
 		[90, 180]
@@ -138,10 +137,9 @@ var map = leaflet.map('map', {
 
 window.map = map;
 
-leaflet.tileLayer('http://a{s}.acetate.geoiq.com/tiles/{variant}/{z}/{x}/{y}.png', {
-		attribution: '&copy;2012 Esri & Stamen, Data from OSM and Natural Earth',
-		subdomains: '0123',
-		variant: 'acetate-base'
+leaflet.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/{variant}/MapServer/tile/{z}/{y}/{x}', {
+		attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
+		variant: 'Canvas/World_Light_Gray_Base'
 }).addTo(map);
 
 legend = leaflet.control({
