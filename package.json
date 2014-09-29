@@ -1,0 +1,20 @@
+{
+  "devDependencies": {
+    "browserify": "^5.12.1",
+    "clean-css": "^2.2.16",
+    "es6-promise": "^1.0.0",
+    "gh-pages": "^0.2.0",
+    "leaflet": "^0.7.3",
+    "lodash": "^2.4.1",
+    "topojson": "^1.6.18",
+    "uglify-js": "^2.4.15",
+    "uxhr": "^1.0.6"
+  },
+  "dependencies": {
+    "hbsfy": "^2.2.0",
+    "handlebars": "^2.0.0"
+  },
+  "scripts": {
+    "build": "browserify -t hbsfy index.js|uglifyjs -cmo htdocs/index.min.js; cleancss -o ./htdocs/index.min.css index.css"
+  }
+}
